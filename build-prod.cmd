@@ -1,1 +1,0 @@
-CALL docker build -t token-generator:1.0.2-prod -f prod.Dockerfile .

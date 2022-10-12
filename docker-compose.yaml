@@ -1,0 +1,21 @@
+name: token-generator
+
+services:
+  dev:
+    build:
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - 5011:80
+    profiles:
+      - dev
+  prod:
+    depends_on:
+      - dev
+    build:
+      dockerfile: Dockerfile
+      target: prod
+    ports:
+      - 5013:80
+    profiles:
+      - prod 
